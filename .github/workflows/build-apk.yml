@@ -25,13 +25,13 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.10.2'
-          
-          - name: Enable AndroidX
+
+      - name: Enable AndroidX
         run: |
           echo "android.useAndroidX=true" >> jenna-project/gradle.properties
           echo "android.enableJetifier=true" >> jenna-project/gradle.properties
-          
-          - name: Build APK
+
+      - name: Build APK
         run: |
           gradle -p jenna-project :app:assembleDebug
 
